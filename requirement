@@ -4,3 +4,4 @@ scikit-learn
 torchvision
 torchaudio
 matplotlib
+plotly
