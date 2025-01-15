@@ -6,3 +6,4 @@ torchaudio
 matplotlib
 plotly
 tqdm
+seaborn

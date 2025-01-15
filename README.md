@@ -9,6 +9,9 @@ We used Kaagle data for this project, you can find them directly in the SRC data
 We have different notebook :
 
 import_data : is used to read the zip file and transform it into a csv file
+
 data_analysis : these are the descriptive statistics for our dataset
+
 NN : this is the notebook that compares the different neural networks with batchnormalisation 
-NN_hand : we wanted to reproduce this by hand, but the results were not as good as we had hoped.
+
+NN_hand : we wanted to reproduce this by hand, but the results were not as good as we had hoped
