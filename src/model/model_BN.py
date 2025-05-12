@@ -1,5 +1,6 @@
 import torch.nn as nn
 
+
 class BNNet(nn.Module):
     def __init__(self, input_dim):
         super(BNNet, self).__init__()
@@ -8,7 +9,7 @@ class BNNet(nn.Module):
             nn.BatchNorm1d(32),
             nn.ReLU(),
             nn.Linear(32, 1),
-            nn.Sigmoid()
+            nn.Sigmoid(),
         )
 
     def forward(self, x):

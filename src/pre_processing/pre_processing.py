@@ -3,16 +3,19 @@ from sklearn.model_selection import train_test_split
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 
+
 def prepare_dataloaders(file_path, batch_size=64, test_size=0.2, seed=42):
     # Lire les données
     data = pd.read_csv(file_path)
-    data['label'] = data['label'].map({'male': 1, 'female': 0})
-    
-    # Separation
-    X = data.drop(columns=['label']).values
-    y = data['label'].values
+    data["label"] = data["label"].map({"male": 1, "female": 0})
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=seed)
+    # Separation
+    X = data.drop(columns=["label"]).values
+    y = data["label"].values
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=test_size, random_state=seed
+    )
 
     # Conversion en tenseurs
     X_train_tensor = torch.tensor(X_train, dtype=torch.float32)

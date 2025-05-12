@@ -13,7 +13,9 @@ response = requests.get(zip_path)
 response.raise_for_status()
 
 # Aller à la racine du projet (ex: AML/) et créer le dossier 'data' là
-project_root = Path(__file__).resolve().parents[2]  # <-- remonte deux niveaux pour sortir de src/
+project_root = (
+    Path(__file__).resolve().parents[2]
+)  # <-- remonte deux niveaux pour sortir de src/
 data_dir = project_root / "data"
 data_dir.mkdir(parents=True, exist_ok=True)
 

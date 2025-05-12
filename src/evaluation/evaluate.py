@@ -1,5 +1,6 @@
 import torch
 
+
 def evaluate(model, test_loader):
     model.eval()
     correct = total = 0
