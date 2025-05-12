@@ -15,10 +15,7 @@ def main():
     input_dim = next(iter(train_loader))[0].shape[1]
 
     # Liste des modèles à comparer
-    models = {
-        "SimpleNN": SimpleNN(input_dim),
-        "BNNet": BNNet(input_dim)
-    }
+    models = {"SimpleNN": SimpleNN(input_dim), "BNNet": BNNet(input_dim)}
 
     results = {}
 
@@ -33,6 +30,7 @@ def main():
     print("\n📊 Résumé des performances :")
     for name, acc in results.items():
         print(f"- {name}: {acc:.2%}")
+
 
 if __name__ == "__main__":
     main()
