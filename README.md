@@ -1,19 +1,43 @@
-# AML
+# 🧠 AML - Gender Classification with Neural Networks
 
-dernier test
+This is the **Advanced Machine Learning project** from 3rd year at **ENSAE Paris**.
 
-This is the Advanced Machine Learning project in 3rd year at ENSAE Paris. This project was designed by Antoine Rougier, Grégoire Brugère and Marin Petibon. 
+> Project by Antoine Rougier, Grégoire Brugère, and Marin Petibon.
 
-The theoretical subject of this notebook is Batchnormalisation. And we're trying to predict a person's gender using voice data. To look at the effects of batchnormalization, we try to see if it influences the Internal Covariate Shift. To do this, we add Gaussian noise after each layer that has been batchnormalised and then compare the results with a reference layer.
+---
 
-We used Kaagle data for this project, you can find them directly in the SRC data file, or you can find here : https://www.kaggle.com/datasets/primaryobjects/voicegender 
+## 📚 Project Summary
 
-We have different notebook :
+We aim to **predict a person's gender based on voice data** using neural networks.
 
-import_data : is used to read the zip file and transform it into a csv file
+The key theoretical concept explored is **Batch Normalization**. We compare:
 
-data_analysis : these are the descriptive statistics for our dataset
+- A simple feedforward neural network
+- A neural network with BatchNorm layers
 
-NN : this is the notebook that compares the different neural networks with batchnormalisation 
+To observe the effects of BatchNorm, we also experiment with adding **Gaussian noise** and examine its impact on **Internal Covariate Shift**.
 
-NN_hand : we wanted to reproduce this by hand, but the results were not as good as we had hoped
+---
+
+## 📁 Dataset
+
+We use the public dataset from Kaggle:  
+https://www.kaggle.com/datasets/primaryobjects/voicegender
+
+The data is automatically downloaded and extracted when the project is run.
+
+---
+
+## 🧪 Project Structure
+
+AML/
+├── data/ # voice.csv will be placed here
+├── src/
+│ ├── main.py # main script to run full pipeline
+│ ├── pre_processing/ # data preprocessing scripts
+│ │ └── pre_processing.py
+│ ├── models/ # model definitions
+│ │ ├── model_simple.py
+│ │ └── model_BN.py
+│ ├── train/ # training loop
+│ │ └── entrainement.py
