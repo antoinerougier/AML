@@ -1,5 +1,5 @@
 # Utilise une image Python officielle
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Définir le répertoire de travail
 WORKDIR /AML
