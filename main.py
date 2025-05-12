@@ -1,9 +1,9 @@
 import os
 import torch
 from src.pre_processing.pre_processing import prepare_dataloaders
-from src.models.model_simple import SimpleNN
-from src.models.model_BN import BNNet
-from src.entrainement.train import train_model
+from src.model.model_simple import SimpleNN
+from src.model.model_BN import BNNet
+from src.train.entrainement import train_model
 
 def evaluate(model, test_loader):
     model.eval()
