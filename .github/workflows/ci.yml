@@ -35,7 +35,3 @@ jobs:
           echo "Pylint score is below the threshold! Exiting with error."
           exit 1
         fi
-
-    - name: Run main.py
-      run: |
-        python -m main
