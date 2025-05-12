@@ -35,7 +35,7 @@ Here’s how to get started in one command-line session:
 
 ```bash
 # Clone the repository
-git clone <REPO_URL>
+git clone https://github.com/antoinerougier/AML.git
 cd AML
 
 # (Optional) Create a virtual environment
