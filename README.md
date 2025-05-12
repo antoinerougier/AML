@@ -1,5 +1,7 @@
 # AML
 
+test
+
 This is the Advanced Machine Learning project in 3rd year at ENSAE Paris. This project was designed by Antoine Rougier, Grégoire Brugère and Marin Petibon. 
 
 The theoretical subject of this notebook is Batchnormalisation. And we're trying to predict a person's gender using voice data. To look at the effects of batchnormalization, we try to see if it influences the Internal Covariate Shift. To do this, we add Gaussian noise after each layer that has been batchnormalised and then compare the results with a reference layer.
