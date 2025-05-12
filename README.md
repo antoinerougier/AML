@@ -26,18 +26,24 @@ https://www.kaggle.com/datasets/primaryobjects/voicegender
 
 The data is automatically downloaded and extracted when the project is run.
 
+
 ---
 
-## 🧪 Project Structure
+## ⚙️ Setup & Run
 
-AML/
-├── data/ # voice.csv will be placed here
-├── src/
-│ ├── main.py # main script to run full pipeline
-│ ├── pre_processing/ # data preprocessing scripts
-│ │ └── pre_processing.py
-│ ├── models/ # model definitions
-│ │ ├── model_simple.py
-│ │ └── model_BN.py
-│ ├── train/ # training loop
-│ │ └── entrainement.py
+Here’s how to get started in one command-line session:
+
+```bash
+# Clone the repository
+git clone <REPO_URL>
+cd AML
+
+# (Optional) Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the full pipeline
+python main.py
