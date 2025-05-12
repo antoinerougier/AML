@@ -1,21 +1,10 @@
 import os
-import torch
 from src.pre_processing.pre_processing import prepare_dataloaders
 from src.model.model_simple import SimpleNN
 from src.model.model_BN import BNNet
 from src.train.entrainement import train_model
+from src.evaluation.evaluate import evaluate
 
-def evaluate(model, test_loader):
-    model.eval()
-    correct = total = 0
-    with torch.no_grad():
-        for X_batch, y_batch in test_loader:
-            preds = model(X_batch)
-            predicted = (preds > 0.5).float()
-            correct += (predicted == y_batch).sum().item()
-            total += y_batch.size(0)
-    accuracy = correct / total
-    return accuracy
 
 def main():
     # Charger les données
