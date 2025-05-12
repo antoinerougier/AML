@@ -1,4 +1,8 @@
+# Utilise une image Python officielle
 FROM python:3.11-slim
+
+# Définir le répertoire de travail
+WORKDIR /AML
 
 # Copier les fichiers du projet
 COPY . .
