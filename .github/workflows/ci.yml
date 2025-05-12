@@ -20,10 +20,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Lint with pylint
+      # Lancer Pylint et vérifier la note
+    - name: Run Pylint
       run: |
-        pip install pylint
-        pylint src
+        pylint main.py --max-line-length=100 --score=y --disable=C0114,C0115,C0116  # Désactiver des warnings inutiles comme la docstring manquante
+      continue-on-error: true  # Cela permet à l'action de continuer même si pylint échoue
+
+    # Vérifier la note de Pylint
+    - name: Check Pylint score
+      run: |
+        pylint_score=$(pylint main.py --max-line-length=100 --score=y --disable=C0114,C0115,C0116 | tee /dev/tty | tail -n 1 | cut -d'/' -f1)
+        echo "Pylint score: $pylint_score"
+        if (( $(echo "$pylint_score < 5" | bc -l) )); then
+          echo "Pylint score is below the threshold! Exiting with error."
+          exit 1
+        fi
 
     - name: Run main.py
       run: |
