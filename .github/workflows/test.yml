@@ -1,0 +1,46 @@
+name: Lint Code with Pylint
+
+on:
+  push:
+    branches:
+      - main  # ou la branche de votre choix
+  pull_request:
+    branches:
+      - main  # ou la branche de votre choix
+
+jobs:
+  pylint:
+    runs-on: ubuntu-latest  # Utiliser Ubuntu comme environnement d'exécution
+
+    steps:
+      # Checkout le code du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Installer Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Version de Python que vous utilisez
+
+      # Installer les dépendances
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
+
+      # Lancer Pylint et vérifier la note
+      - name: Run Pylint
+        run: |
+          pylint main.py --max-line-length=100 --score=y --disable=C0114,C0115,C0116  # Désactiver des warnings inutiles comme la docstring manquante
+        continue-on-error: true  # Cela permet à l'action de continuer même si pylint échoue
+
+      # Vérifier la note de Pylint
+      - name: Check Pylint score
+        run: |
+          pylint_score=$(pylint main.py --max-line-length=100 --score=y --disable=C0114,C0115,C0116 | tee /dev/tty | tail -n 1 | cut -d'/' -f1)
+          echo "Pylint score: $pylint_score"
+          if (( $(echo "$pylint_score < 6" | bc -l) )); then
+            echo "Pylint score is below the threshold! Exiting with error."
+            exit 1
+          fi
