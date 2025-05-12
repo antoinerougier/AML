@@ -9,7 +9,7 @@ COPY . .
 
 # Installer les dépendances
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 # Spécifie la commande à exécuter
 CMD ["python", "main.py"]
