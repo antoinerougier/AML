@@ -1,0 +1,11 @@
+FROM python:3.11-slim
+
+# Copier les fichiers du projet
+COPY . .
+
+# Installer les dépendances
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# Spécifie la commande à exécuter
+CMD ["python", "main.py"]
