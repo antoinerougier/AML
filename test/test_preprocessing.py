@@ -13,7 +13,7 @@ def test_data_preprocessing():
     df['label'] = df['label'].map({'male': 1, 'female': 0})
     
     # Sauver les données en CSV temporairement
-    file_path = 'data/voice.csv'
+    file_path = 'test/voice.csv'
     df.to_csv(file_path, index=False)
 
     # Tester la fonction de pré-processing
