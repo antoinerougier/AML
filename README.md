@@ -45,5 +45,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
+# Access aux données 
+python src/pre_processing/data_download.py
+
 # Run the full pipeline
 python main.py
