@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
@@ -25,6 +25,6 @@ jobs:
           pip install -r requirements.txt
           pip install pylint
 
-      - name: Run Pylint on src and main
+      - name: Run Pylint on main
         run: |
-          pylint src main.py
+          pylint main.py
