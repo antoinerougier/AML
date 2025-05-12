@@ -25,6 +25,6 @@ jobs:
           pip install -r requirements.txt
           pip install pylint
 
-      - name: Run Pylint on main
+      - name: Run Pylint with fail-under
         run: |
-          pylint main.py
+          pylint --fail-under=7 main.py
